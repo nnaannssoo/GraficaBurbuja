@@ -20,14 +20,14 @@ public class Graficar {
     private JFreeChart grafica;
     
     private XYSeriesCollection s;
-    private String nombre,tituloEjeX,tituloEjeY;
+    private String nombre,ejeX,ejeY;
 
-    public Graficar(String nombre,String tituloEjeX,String tituloEjeY) {
+    public Graficar(String nombre,String X,String Y) {
      this.grafica = null;
      this.s = new XYSeriesCollection();
      this.nombre = nombre;
-     this.tituloEjeX =tituloEjeX;
-     this.tituloEjeY = tituloEjeY;
+     this.ejeX =X;
+     this.ejeY = Y;
     }
     public void agregarSerie(double[] dt,double[] dn , String nombre){
     XYSeries serie = new XYSeries(nombre);
@@ -40,7 +40,7 @@ public class Graficar {
     
     
     public void hacerGrafica() {
-         this.grafica = ChartFactory.createXYLineChart(nombre, tituloEjeX, tituloEjeY, s);
+         this.grafica = ChartFactory.createXYLineChart(nombre, ejeX, ejeY, s);
         
         ChartFrame panel = new ChartFrame("grafica",grafica);
         panel.pack();
