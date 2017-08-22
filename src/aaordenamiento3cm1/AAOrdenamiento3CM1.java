@@ -21,13 +21,17 @@ public class AAOrdenamiento3CM1 {
     public static void main(String[] args) {
         // TODO code application logic here
         //double [] datos = new double[]{6,5,3,1,8,7,2,4};
-        double [] datos =herramientas.Datos.generarDatosAleatorios(50000, 100);
-        double []dt=new double [10];
-        double []dt1=new double [10];
-        double []dn=new double [10];
+        int n;
+        n=100;
+        int corridas;
+        corridas=10;
+        double [] datos =herramientas.Datos.generarDatosAleatorios(n, 100);
+        double []dt=new double [corridas];
+        double []dt1=new double [corridas];
+        double []dn=new double [corridas];
         
         
-        for(int i=0;i<10;i++){
+        for(int i=0;i<corridas;i++){
         //double [] datos2 = new double[]{8,7,6,5,4,3,2,1};
         double [] datos3 = datos.clone();
         Burbuja b1 = new Burbuja();
